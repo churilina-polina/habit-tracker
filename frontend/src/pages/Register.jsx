@@ -1,7 +1,8 @@
+import { Lock, Mail, User } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import AuthLayout from "../components/AuthLayout";
+import AuthHero from "../components/AuthHero";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -27,40 +28,51 @@ export default function Register() {
   };
 
   return (
-    <AuthLayout title="Начнём" subtitle="Создай аккаунт и заведи первую привычку">
+    <AuthHero mode="register">
+      <h2>Создать аккаунт</h2>
+      <p className="text-muted">Начни отслеживать привычки уже сегодня</p>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label>Имя</label>
-          <input
-            className="input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Полина"
-            required
-          />
+          <div className="input-icon-wrap">
+            <User size={15} />
+            <input
+              className="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Полина"
+              required
+            />
+          </div>
         </div>
         <div className="field">
           <label>Email</label>
-          <input
-            className="input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            required
-          />
+          <div className="input-icon-wrap">
+            <Mail size={15} />
+            <input
+              className="input"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+            />
+          </div>
         </div>
         <div className="field">
           <label>Пароль</label>
-          <input
-            className="input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Минимум 8 символов"
-            minLength={8}
-            required
-          />
+          <div className="input-icon-wrap">
+            <Lock size={15} />
+            <input
+              className="input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Минимум 8 символов"
+              minLength={8}
+              required
+            />
+          </div>
         </div>
         {error && <p className="form-error">{error}</p>}
         <button className="btn btn-primary btn-block" type="submit" disabled={loading}>
@@ -70,6 +82,6 @@ export default function Register() {
       <p className="auth-switch">
         Уже есть аккаунт? <Link to="/login">Войти</Link>
       </p>
-    </AuthLayout>
+    </AuthHero>
   );
 }

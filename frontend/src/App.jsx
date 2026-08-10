@@ -3,6 +3,7 @@ import { useAuth } from "./context/AuthContext";
 import Dashboard from "./pages/Dashboard";
 import HabitDetail from "./pages/HabitDetail";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 
 function PrivateRoute({ children }) {
@@ -29,6 +30,14 @@ export default function App() {
           element={
             <PrivateRoute>
               <HabitDetail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />

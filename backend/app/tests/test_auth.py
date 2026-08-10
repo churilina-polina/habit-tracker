@@ -40,3 +40,18 @@ async def test_login_wrong_password(client):
         "/auth/login", json={"email": "a@example.com", "password": "wrong"}
     )
     assert response.status_code == 401
+
+
+async def test_me_includes_created_at(auth_client):
+    response = await auth_client.get("/auth/me")
+    assert response.status_code == 200
+    assert "created_at" in response.json()
+
+
+async def test_update_me_changes_name(auth_client):
+    response = await auth_client.patch("/auth/me", json={"name": "Новое Имя"})
+    assert response.status_code == 200
+    assert response.json()["name"] == "Новое Имя"
+
+    me = await auth_client.get("/auth/me")
+    assert me.json()["name"] == "Новое Имя"

@@ -22,6 +22,11 @@ class UserOut(BaseModel):
     id: int
     email: EmailStr
     name: str
+    created_at: datetime.datetime
+
+
+class UserUpdate(BaseModel):
+    name: str = Field(min_length=1, max_length=255)
 
 
 class Token(BaseModel):

@@ -1,11 +1,5 @@
 import { useState } from "react";
-
-const CATEGORIES = [
-  { value: "health", label: "💧 Здоровье" },
-  { value: "study", label: "📚 Учёба" },
-  { value: "productivity", label: "⚡ Продуктивность" },
-  { value: "other", label: "✨ Другое" },
-];
+import { CATEGORY_META, CATEGORY_ORDER } from "../constants/categories";
 
 export default function AddHabitForm({ onCreate, onClose }) {
   const [title, setTitle] = useState("");
@@ -25,9 +19,9 @@ export default function AddHabitForm({ onCreate, onClose }) {
   };
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <form className="modal-card card" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
-        <h2>Новая привычка</h2>
+    <div className="dialog-backdrop" onClick={onClose}>
+      <form className="dialog card elev-lg" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
+        <h2 className="dialog-title">Новая привычка</h2>
         <div className="field">
           <label>Название</label>
           <input
@@ -41,16 +35,21 @@ export default function AddHabitForm({ onCreate, onClose }) {
         <div className="field">
           <label>Категория</label>
           <div className="category-picker">
-            {CATEGORIES.map((c) => (
-              <button
-                type="button"
-                key={c.value}
-                className={`category-chip ${category === c.value ? "active" : ""}`}
-                onClick={() => setCategory(c.value)}
-              >
-                {c.label}
-              </button>
-            ))}
+            {CATEGORY_ORDER.map((value) => {
+              const meta = CATEGORY_META[value];
+              const Icon = meta.icon;
+              return (
+                <button
+                  type="button"
+                  key={value}
+                  className={`category-chip ${category === value ? "active" : ""}`}
+                  onClick={() => setCategory(value)}
+                >
+                  <Icon size={13} />
+                  {meta.label}
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className="field reminder-field">
@@ -71,7 +70,7 @@ export default function AddHabitForm({ onCreate, onClose }) {
             />
           )}
         </div>
-        <div className="modal-actions">
+        <div className="dialog-actions">
           <button type="button" className="btn btn-ghost" onClick={onClose}>
             Отмена
           </button>

@@ -31,8 +31,15 @@ export function AuthProvider({ children }) {
     setToken(null);
   };
 
+  const updateProfile = async (name) => {
+    const { data } = await client.patch("/auth/me", { name });
+    setUser(data);
+  };
+
   return (
-    <AuthContext.Provider value={{ token, user, isAuthenticated: !!token, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ token, user, isAuthenticated: !!token, login, register, logout, updateProfile }}
+    >
       {children}
     </AuthContext.Provider>
   );

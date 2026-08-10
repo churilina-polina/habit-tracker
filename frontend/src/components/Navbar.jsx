@@ -1,6 +1,6 @@
+import { Flame, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import NotificationBell from "./NotificationBell";
 
 export default function Navbar() {
   const { logout } = useAuth();
@@ -10,20 +10,27 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <button className="navbar-logo" onClick={() => navigate("/")}>
-          <span className="navbar-logo-icon">✓</span> Habitly
+          <Flame size={20} color="var(--color-accent-700)" />
+          Habitly
         </button>
-        <div className="navbar-actions">
-          <NotificationBell />
-          <button
-            className="btn btn-ghost"
-            onClick={() => {
-              logout();
-              navigate("/login");
-            }}
-          >
-            Выйти
+        <nav className="navbar-links">
+          <button className="navbar-link" onClick={() => navigate("/")}>
+            Дашборд
           </button>
-        </div>
+          <button className="navbar-link" onClick={() => navigate("/profile")}>
+            Профиль
+          </button>
+        </nav>
+        <button
+          className="btn btn-secondary btn-sm"
+          onClick={() => {
+            logout();
+            navigate("/login");
+          }}
+        >
+          <LogOut size={15} />
+          Выйти
+        </button>
       </div>
     </header>
   );

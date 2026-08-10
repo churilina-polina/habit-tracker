@@ -11,7 +11,7 @@ export default function ProgressRing({ percent, size = 96, stroke = 10, label, s
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="var(--color-border)"
+          stroke="var(--color-neutral-300)"
           strokeWidth={stroke}
         />
         <circle
@@ -19,7 +19,7 @@ export default function ProgressRing({ percent, size = 96, stroke = 10, label, s
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="var(--color-primary)"
+          stroke="var(--color-accent)"
           strokeWidth={stroke}
           strokeLinecap="round"
           strokeDasharray={circumference}

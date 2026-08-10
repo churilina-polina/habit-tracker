@@ -1,7 +1,8 @@
+import { Lock, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import AuthLayout from "../components/AuthLayout";
+import AuthHero from "../components/AuthHero";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -26,29 +27,37 @@ export default function Login() {
   };
 
   return (
-    <AuthLayout title="С возвращением" subtitle="Войди, чтобы продолжить свои привычки">
+    <AuthHero mode="login">
+      <h2>С возвращением</h2>
+      <p className="text-muted">Войди, чтобы продолжить свои привычки</p>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label>Email</label>
-          <input
-            className="input"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            required
-          />
+          <div className="input-icon-wrap">
+            <Mail size={15} />
+            <input
+              className="input"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+            />
+          </div>
         </div>
         <div className="field">
           <label>Пароль</label>
-          <input
-            className="input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="••••••••"
-            required
-          />
+          <div className="input-icon-wrap">
+            <Lock size={15} />
+            <input
+              className="input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              required
+            />
+          </div>
         </div>
         {error && <p className="form-error">{error}</p>}
         <button className="btn btn-primary btn-block" type="submit" disabled={loading}>
@@ -58,6 +67,6 @@ export default function Login() {
       <p className="auth-switch">
         Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
       </p>
-    </AuthLayout>
+    </AuthHero>
   );
 }
