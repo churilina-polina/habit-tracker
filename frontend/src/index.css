@@ -59,7 +59,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -71,9 +71,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-h1 { font-size: 34px; }
-h2 { font-size: 24px; }
-h3 { font-size: 19px; }
+h1 { font-size: 42px; }
+h2 { font-size: 29px; }
+h3 { font-size: 22px; }
 
 a {
   color: var(--color-accent-700);
@@ -98,9 +98,9 @@ button {
 }
 
 .container {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   width: 100%;
 }
 
@@ -117,10 +117,10 @@ button {
   cursor: pointer;
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 15.5px;
   border: 1px solid transparent;
   border-radius: 999px;
-  padding: 12px 22px;
+  padding: 13px 26px;
   transition: background 0.15s ease, transform 0.15s ease;
   background: transparent;
   color: var(--color-text);
@@ -201,10 +201,10 @@ button {
 
 .input {
   width: 100%;
-  min-height: 44px;
-  padding: 10px 16px;
+  min-height: 48px;
+  padding: 11px 18px;
   font: inherit;
-  font-size: 14.5px;
+  font-size: 15.5px;
   color: var(--color-text);
   background: var(--color-surface-2);
   border: 1.5px solid var(--color-divider);
@@ -248,11 +248,11 @@ textarea.input {
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 11.5px;
+  gap: 5px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  padding: 4px 11px;
+  padding: 5px 13px;
   border-radius: 999px;
 }
 
@@ -375,8 +375,8 @@ textarea.input {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 48px;
-  padding: 72px 56px;
+  gap: 56px;
+  padding: 88px 72px;
 }
 
 .auth-blob-1 {
@@ -413,38 +413,38 @@ textarea.input {
 .auth-brand {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 17px;
-  margin-bottom: 28px;
+  font-size: 19px;
+  margin-bottom: 30px;
   position: relative;
 }
 
 .auth-landing-title {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 46px;
-  line-height: 1.1;
-  max-width: 520px;
-  margin: 18px 0 18px;
+  font-size: 54px;
+  line-height: 1.08;
+  max-width: 580px;
+  margin: 20px 0 20px;
 }
 
 .auth-landing-quote {
   font-style: italic;
   opacity: 0.85;
-  max-width: 420px;
+  max-width: 460px;
   border-left: 2px solid var(--color-accent);
-  padding-left: 14px;
-  margin: 0 0 30px;
-  font-size: 15.5px;
+  padding-left: 16px;
+  margin: 0 0 34px;
+  font-size: 17px;
 }
 
 .auth-landing-features {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-  font-size: 13.5px;
+  margin-bottom: 44px;
+  font-size: 14.5px;
 }
 
 .auth-landing-features span {
@@ -476,9 +476,9 @@ textarea.input {
 .auth-preview-card {
   position: relative;
   width: 100%;
-  max-width: 300px;
-  padding: 26px;
-  gap: 20px;
+  max-width: 340px;
+  padding: 30px;
+  gap: 22px;
   transform: rotate(2deg);
 }
 
@@ -525,10 +525,10 @@ textarea.input {
 
 .auth-preview-streak {
   position: absolute;
-  bottom: -46px;
-  left: -24px;
-  width: 180px;
-  padding: 14px 16px;
+  bottom: -50px;
+  left: -26px;
+  width: 200px;
+  padding: 16px 18px;
   flex-direction: row;
   align-items: center;
   gap: 10px;
@@ -570,7 +570,7 @@ textarea.input {
     var(--color-accent-100) 260px,
     var(--color-accent-100) 100%
   );
-  padding: 60px 52px;
+  padding: 68px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -585,9 +585,9 @@ textarea.input {
 .auth-form-headline {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 36px;
-  line-height: 1.12;
-  margin: 16px 0 16px;
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 18px 0 18px;
 }
 
 .auth-form-wrap {
@@ -599,14 +599,14 @@ textarea.input {
 
 .auth-card {
   width: 100%;
-  max-width: 380px;
-  padding: 42px;
+  max-width: 440px;
+  padding: 48px;
   gap: 4px;
 }
 
 .auth-card-icon {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--color-accent-100);
   display: flex;
@@ -618,13 +618,13 @@ textarea.input {
 .auth-card h2 {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 2px;
+  font-size: 28px;
+  margin-bottom: 4px;
 }
 
 .auth-card > .text-muted {
-  margin: 0 0 20px;
-  font-size: 14px;
+  margin: 0 0 24px;
+  font-size: 15px;
 }
 
 .auth-card form {
@@ -655,13 +655,13 @@ textarea.input {
 
 /* Dashboard */
 .dashboard {
-  padding: 32px 24px 60px;
+  padding: 40px 32px 72px;
 }
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 28px;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
   align-items: start;
 }
 
@@ -674,14 +674,14 @@ textarea.input {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 34px;
+  padding: 44px 48px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 26px;
+  gap: 32px;
   background: linear-gradient(135deg, var(--color-accent-100), var(--color-surface));
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .hero-blob {
@@ -713,7 +713,8 @@ textarea.input {
 .hero-quote {
   font-style: italic;
   opacity: 0.85;
-  margin: 0 0 22px;
+  margin: 0 0 24px;
+  font-size: 17px;
 }
 
 .hero-stats {
@@ -726,7 +727,7 @@ textarea.input {
   font-family: var(--font-body);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 26px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -791,14 +792,14 @@ textarea.input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 18px;
+  padding: 20px 26px;
 }
 
 .habit-checkbox {
   flex: none;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 2px solid var(--color-divider);
   background: transparent;
@@ -825,7 +826,7 @@ textarea.input {
 .habit-title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 15.5px;
+  font-size: 17px;
   color: var(--color-text);
 }
 
@@ -892,8 +893,8 @@ textarea.input {
 }
 
 .aside-card {
-  padding: 22px;
-  gap: 16px;
+  padding: 26px;
+  gap: 18px;
 }
 
 .aside-card h3 {
@@ -1063,8 +1064,8 @@ textarea.input {
 
 /* Habit detail */
 .detail-page {
-  padding: 32px 24px 60px;
-  max-width: 760px;
+  padding: 40px 32px 72px;
+  max-width: 860px;
 }
 
 .back-link {
@@ -1106,19 +1107,19 @@ textarea.input {
 }
 
 .stat-card {
-  padding: 20px 12px;
+  padding: 26px 16px;
   align-items: center;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .stat-value {
   font-family: var(--font-body);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 22px;
+  font-size: 26px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1130,8 +1131,8 @@ textarea.input {
 }
 
 .chart-card {
-  padding: 24px;
-  margin-bottom: 20px;
+  padding: 30px;
+  margin-bottom: 22px;
 }
 
 .chart-card h3 {
@@ -1158,8 +1159,8 @@ textarea.input {
 
 /* Profile */
 .profile-page {
-  padding: 32px 24px 60px;
-  max-width: 760px;
+  padding: 40px 32px 72px;
+  max-width: 860px;
 }
 
 .profile-page h1 {
@@ -1169,14 +1170,14 @@ textarea.input {
 .profile-card {
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  padding: 24px;
-  margin-bottom: 20px;
+  gap: 24px;
+  padding: 30px;
+  margin-bottom: 24px;
 }
 
 .profile-avatar {
-  width: 68px;
-  height: 68px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: var(--color-accent);
   color: var(--color-surface-2);
@@ -1218,15 +1219,15 @@ textarea.input {
 .profile-stat {
   align-items: center;
   text-align: center;
-  padding: 18px;
-  gap: 4px;
+  padding: 24px;
+  gap: 6px;
 }
 
 .profile-stat-value {
   font-family: var(--font-body);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 21px;
+  font-size: 25px;
 }
 
 .profile-stat-date {

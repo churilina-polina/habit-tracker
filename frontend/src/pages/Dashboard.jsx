@@ -117,7 +117,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <ProgressRing percent={percent} label={`${percent}%`} sublabel="сегодня" size={120} />
+            <ProgressRing percent={percent} label={`${percent}%`} sublabel="сегодня" size={140} stroke={12} />
           </section>
 
           <div className="section-heading">
