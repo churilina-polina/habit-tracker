@@ -356,6 +356,7 @@ textarea.input {
 
 /* Auth / landing */
 .auth-page {
+  position: relative;
   background: var(--color-bg);
 }
 
@@ -544,10 +545,25 @@ textarea.input {
 }
 
 .auth-form-section {
+  position: relative;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
-  transition: opacity 0.12s linear, transform 0.12s linear;
+}
+
+.auth-transition-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-neutral-900);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.auth-form-info .auth-brand,
+.auth-form-info-text > *,
+.auth-form-info .auth-landing-features,
+.auth-card {
+  transition: opacity 0.08s linear, transform 0.08s linear;
   will-change: opacity, transform;
 }
 
