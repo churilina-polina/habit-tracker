@@ -14,12 +14,6 @@ function reveal(scrollY, start, span = 260) {
   return Math.min(1, Math.max(0, (scrollY - start) / span));
 }
 
-// Колоколообразная кривая 0 → 1 → 0 с пиком в центре окна — для затемнения на стыке секций.
-function bell(scrollY, center, width) {
-  const x = Math.min(1, Math.max(0, (scrollY - (center - width / 2)) / width));
-  return Math.sin(x * Math.PI);
-}
-
 export default function AuthHero({ mode, children }) {
   const [scrollY, setScrollY] = useState(0);
   const [sectionTop, setSectionTop] = useState(0);
@@ -77,13 +71,8 @@ export default function AuthHero({ mode, children }) {
   // Параллакс иллюстрации: плывёт медленнее контента, создавая ощущение глубины.
   const parallax = Math.min(scrollY * 0.12, 90);
 
-  // Затемнение ровно на стыке секций — как переход между кадрами.
-  const overlayOpacity = bell(scrollY, sectionTop, 480) * 0.45;
-
   return (
     <div className="auth-page">
-      <div className="auth-transition-overlay" style={{ opacity: overlayOpacity }} />
-
       <section className="auth-landing">
         <div className="auth-blob auth-blob-1" style={{ transform: `translateY(${parallax * 0.6}px)` }} />
         <div className="auth-blob auth-blob-2" style={{ transform: `translateY(${-parallax * 0.4}px)` }} />

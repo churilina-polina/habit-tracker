@@ -551,14 +551,6 @@ textarea.input {
   grid-template-columns: 1.05fr 1fr;
 }
 
-.auth-transition-overlay {
-  position: absolute;
-  inset: 0;
-  background: var(--color-neutral-900);
-  pointer-events: none;
-  z-index: 5;
-}
-
 .auth-form-info .auth-brand,
 .auth-form-info-text > *,
 .auth-form-info .auth-landing-features,
