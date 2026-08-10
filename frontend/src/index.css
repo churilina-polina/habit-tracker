@@ -476,25 +476,85 @@ textarea.input {
 
 .auth-landing-preview {
   position: relative;
-  width: fit-content;
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.auth-preview-halo {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--color-accent-200), var(--color-accent-100) 70%);
+  top: 50%;
+  right: -40px;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.auth-preview-halo-outline {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px dashed var(--color-accent-300);
+  top: 50%;
+  right: -40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.auth-preview-stack {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
 }
 
 .auth-preview-card {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  padding: 36px;
-  gap: 26px;
-  transform: rotate(2deg);
+  padding: 28px;
+  gap: 20px;
+  transform: rotate(1.5deg);
 }
 
 .auth-preview-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.auth-preview-head-title {
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: 16px;
+}
+
+.auth-preview-head-date {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.auth-preview-ring {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex: none;
+}
+
+.auth-preview-ring-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.auth-preview-divider {
+  height: 1px;
+  background: var(--color-divider);
 }
 
 .auth-preview-list {
@@ -506,17 +566,30 @@ textarea.input {
 .auth-preview-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 15px;
+  gap: 10px;
+  font-size: 13px;
 }
 
 .auth-preview-item.muted {
   opacity: 0.55;
 }
 
+.auth-preview-item-label {
+  flex: 1;
+}
+
+.auth-preview-item-days {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.auth-preview-item-days.dim {
+  opacity: 0.4;
+}
+
 .auth-preview-check {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: 2px solid var(--color-divider);
   flex: none;
@@ -530,27 +603,67 @@ textarea.input {
   border-color: var(--color-accent);
 }
 
+.auth-preview-bars {
+  display: flex;
+  gap: 5px;
+}
+
+.auth-preview-bars span {
+  flex: 1;
+  height: 26px;
+  border-radius: 7px;
+}
+
 .auth-preview-streak {
   position: absolute;
-  bottom: -54px;
-  left: -30px;
-  width: 230px;
-  padding: 18px 20px;
+  bottom: -46px;
+  left: -56px;
+  width: 190px;
+  padding: 15px 18px;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
-  background: var(--color-surface-2);
+  gap: 11px;
+  background: var(--color-surface);
+  transform: rotate(-2deg);
+}
+
+.auth-preview-streak-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-accent-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
 }
 
 .auth-preview-streak-value {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .auth-preview-streak-label {
-  font-size: 12.5px;
+  font-size: 11px;
   opacity: 0.65;
+}
+
+.auth-preview-trend {
+  position: absolute;
+  top: -34px;
+  right: -44px;
+  padding: 12px 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  background: var(--color-surface);
+  transform: rotate(3deg);
+}
+
+.auth-preview-trend span {
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .auth-form-section {

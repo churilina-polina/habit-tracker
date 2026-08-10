@@ -1,4 +1,4 @@
-import { Bell, Check, ChevronDown, Flame, LineChart, Sparkles } from "lucide-react";
+import { Bell, Check, ChevronDown, Flame, LineChart, Sparkles, TrendingUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const QUOTES = [
@@ -19,6 +19,7 @@ export default function AuthHero({ mode, children }) {
   const [sectionTop, setSectionTop] = useState(0);
   const cardSectionRef = useRef(null);
   const quote = QUOTES[new Date().getDate() % QUOTES.length];
+  const todayLabel = new Date().toLocaleDateString("ru-RU", { weekday: "long", day: "numeric", month: "long" });
 
   useEffect(() => {
     // setTimeout-троттлинг вместо requestAnimationFrame: не зависит от того,
@@ -102,50 +103,88 @@ export default function AuthHero({ mode, children }) {
           </button>
         </div>
 
-        <div className="auth-landing-preview" style={{ transform: `translateY(${-parallax}px)` }}>
-          <div className="card elev-lg auth-preview-card">
-            <div className="auth-preview-head">
-              <span>Сегодня</span>
-              <svg width="48" height="48" viewBox="0 0 52 52">
-                <circle cx="26" cy="26" r="21" fill="none" stroke="var(--color-neutral-300)" strokeWidth="5" />
-                <circle
-                  cx="26"
-                  cy="26"
-                  r="21"
-                  fill="none"
-                  stroke="var(--color-accent)"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeDasharray="132"
-                  strokeDashoffset="35"
-                  transform="rotate(-90 26 26)"
-                />
-              </svg>
+        <div className="auth-landing-preview">
+          <div className="auth-preview-halo" style={{ transform: `translateY(calc(-50% + ${-parallax}px))` }} />
+          <div
+            className="auth-preview-halo-outline"
+            style={{ transform: `translateY(calc(-50% + ${-parallax}px))` }}
+          />
+
+          <div className="auth-preview-stack" style={{ transform: `translateY(${-parallax}px)` }}>
+            <div className="card elev-lg auth-preview-card">
+              <div className="auth-preview-head">
+                <div>
+                  <div className="auth-preview-head-title">Сегодня</div>
+                  <div className="auth-preview-head-date">{todayLabel}</div>
+                </div>
+                <div className="auth-preview-ring">
+                  <svg width="60" height="60" viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="25" fill="none" stroke="var(--color-accent-200)" strokeWidth="6" />
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="25"
+                      fill="none"
+                      stroke="var(--color-accent)"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeDasharray="157"
+                      strokeDashoffset="52"
+                      transform="rotate(-90 30 30)"
+                    />
+                  </svg>
+                  <div className="auth-preview-ring-value">67%</div>
+                </div>
+              </div>
+
+              <div className="auth-preview-divider" />
+
+              <div className="auth-preview-list">
+                <div className="auth-preview-item">
+                  <span className="auth-preview-check done">
+                    <Check size={12} color="var(--color-surface)" />
+                  </span>
+                  <span className="auth-preview-item-label">Утренняя пробежка</span>
+                  <span className="auth-preview-item-days">12 дн.</span>
+                </div>
+                <div className="auth-preview-item">
+                  <span className="auth-preview-check done">
+                    <Check size={12} color="var(--color-surface)" />
+                  </span>
+                  <span className="auth-preview-item-label">Пить 2 литра воды</span>
+                  <span className="auth-preview-item-days">21 дн.</span>
+                </div>
+                <div className="auth-preview-item muted">
+                  <span className="auth-preview-check" />
+                  <span className="auth-preview-item-label">Читать 20 страниц</span>
+                  <span className="auth-preview-item-days dim">—</span>
+                </div>
+              </div>
+
+              <div className="auth-preview-bars">
+                <span style={{ background: "var(--color-accent-300)" }} />
+                <span style={{ background: "var(--color-accent-500)" }} />
+                <span style={{ background: "var(--color-accent-200)" }} />
+                <span style={{ background: "var(--color-accent-600)" }} />
+                <span style={{ background: "var(--color-accent-400)" }} />
+                <span style={{ background: "var(--color-accent-600)" }} />
+                <span style={{ background: "var(--color-neutral-200)" }} />
+              </div>
             </div>
-            <div className="auth-preview-list">
-              <div className="auth-preview-item">
-                <span className="auth-preview-check done">
-                  <Check size={12} color="var(--color-surface)" />
-                </span>
-                Утренняя пробежка
-              </div>
-              <div className="auth-preview-item">
-                <span className="auth-preview-check done">
-                  <Check size={12} color="var(--color-surface)" />
-                </span>
-                Пить 2 литра воды
-              </div>
-              <div className="auth-preview-item muted">
-                <span className="auth-preview-check" />
-                Читать 20 страниц
+
+            <div className="card elev-md auth-preview-streak">
+              <span className="auth-preview-streak-icon">
+                <Flame size={17} color="var(--color-accent-700)" />
+              </span>
+              <div>
+                <div className="auth-preview-streak-value">21 день</div>
+                <div className="auth-preview-streak-label">лучший стрик</div>
               </div>
             </div>
-          </div>
-          <div className="card elev-md auth-preview-streak">
-            <Flame size={18} color="var(--color-accent-700)" />
-            <div>
-              <div className="auth-preview-streak-value">21 день</div>
-              <div className="auth-preview-streak-label">лучший стрик</div>
+
+            <div className="card elev-md auth-preview-trend">
+              <TrendingUp size={16} color="var(--color-accent-700)" />
+              <span>+18% за месяц</span>
             </div>
           </div>
         </div>
