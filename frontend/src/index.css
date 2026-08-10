@@ -174,6 +174,8 @@ button {
 
 /* Cards */
 .card {
+  display: flex;
+  flex-direction: column;
   background: var(--color-surface);
   border-radius: calc(var(--radius-lg) * 0.6);
   border: 1px solid var(--color-divider);
@@ -654,22 +656,12 @@ textarea.input {
   }
 }
 
-@media (max-width: 560px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 26px;
-  }
-  .habit-card {
-    flex-wrap: wrap;
-  }
-}
-
 .hero {
   position: relative;
   overflow: hidden;
   padding: 34px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 26px;
@@ -782,6 +774,7 @@ textarea.input {
 
 .habit-card {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 16px;
   padding: 16px 20px;
@@ -1223,4 +1216,15 @@ textarea.input {
 
 .profile-stat-date {
   font-size: 16px;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+  }
+  .habit-card {
+    flex-wrap: wrap;
+  }
 }
