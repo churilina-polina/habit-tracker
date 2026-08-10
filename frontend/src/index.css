@@ -75,6 +75,13 @@ h1 { font-size: 42px; }
 h2 { font-size: 29px; }
 h3 { font-size: 22px; }
 
+/* Крупные заголовки страниц/секций набираются Lora; Caprasimo остаётся только
+   для логотипа и мелких подписей внутри карточек (h3), чтобы шрифты не спорили. */
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
 a {
   color: var(--color-accent-700);
   text-decoration: none;
@@ -373,10 +380,10 @@ textarea.input {
   overflow: hidden;
   background: linear-gradient(160deg, var(--color-accent-100), var(--color-bg) 65%);
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 0.95fr;
   align-items: center;
   gap: 56px;
-  padding: 88px 72px;
+  padding: 88px 96px 88px 72px;
 }
 
 .auth-blob-1 {
@@ -476,9 +483,9 @@ textarea.input {
 .auth-preview-card {
   position: relative;
   width: 100%;
-  max-width: 340px;
-  padding: 30px;
-  gap: 22px;
+  max-width: 400px;
+  padding: 36px;
+  gap: 26px;
   transform: rotate(2deg);
 }
 
@@ -487,7 +494,7 @@ textarea.input {
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .auth-preview-list {
@@ -499,8 +506,8 @@ textarea.input {
 .auth-preview-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 12px;
+  font-size: 15px;
 }
 
 .auth-preview-item.muted {
@@ -508,8 +515,8 @@ textarea.input {
 }
 
 .auth-preview-check {
-  width: 21px;
-  height: 21px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 2px solid var(--color-divider);
   flex: none;
@@ -525,24 +532,24 @@ textarea.input {
 
 .auth-preview-streak {
   position: absolute;
-  bottom: -50px;
-  left: -26px;
-  width: 200px;
-  padding: 16px 18px;
+  bottom: -54px;
+  left: -30px;
+  width: 230px;
+  padding: 18px 20px;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: var(--color-surface-2);
 }
 
 .auth-preview-streak-value {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .auth-preview-streak-label {
-  font-size: 11px;
+  font-size: 12.5px;
   opacity: 0.65;
 }
 
@@ -724,9 +731,9 @@ textarea.input {
 }
 
 .hero-stat-value {
-  font-family: var(--font-body);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
   font-size: 30px;
   display: flex;
   align-items: center;
@@ -824,8 +831,8 @@ textarea.input {
 }
 
 .habit-title {
-  font-family: var(--font-body);
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-weight: 600;
   font-size: 17px;
   color: var(--color-text);
 }
@@ -1231,7 +1238,9 @@ textarea.input {
 }
 
 .profile-stat-date {
-  font-size: 16px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 17px;
 }
 
 @media (max-width: 560px) {
