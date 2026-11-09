@@ -34,7 +34,7 @@
 ## Запуск через Docker
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/churilina-polina/habit-tracker.git
 cd habit-tracker
 docker compose up --build
 ```
