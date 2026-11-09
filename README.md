@@ -1,5 +1,6 @@
 # Habitly — трекер привычек
 
+[![CI](https://github.com/churilina-polina/habit-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/churilina-polina/habit-tracker/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-async-009688?logo=fastapi&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
@@ -8,6 +9,9 @@
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
 
 Веб-приложение для отслеживания привычек: ежедневный чеклист, стрики, статистика и напоминания. Светлый минималистичный интерфейс.
+
+> **In short (EN):** habit tracker web app with a daily checklist, streaks, statistics and reminders.
+> Async FastAPI + SQLAlchemy 2, React, PostgreSQL, Celery/Redis reminders, Docker, GitHub Actions CI.
 
 ## Идея
 
