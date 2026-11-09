@@ -13,6 +13,16 @@
 > **In short (EN):** habit tracker web app with a daily checklist, streaks, statistics and reminders.
 > Async FastAPI + SQLAlchemy 2, React, PostgreSQL, Celery/Redis reminders, Docker, GitHub Actions CI.
 
+## Скриншоты
+
+| Главная | Дашборд |
+|---|---|
+| ![Главная](docs/screenshots/landing.png) | ![Дашборд](docs/screenshots/dashboard.png) |
+
+Страница привычки со статистикой и календарём выполнения:
+
+![Страница привычки](docs/screenshots/habit-detail.png)
+
 ## Идея
 
 Каждая привычка отмечается одним кликом раз в день. Приложение считает стрик (сколько дней подряд привычка выполняется), показывает процент выполнения за неделю/месяц и присылает напоминание, если привычка ещё не отмечена к заданному времени.
